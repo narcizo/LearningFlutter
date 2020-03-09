@@ -37,13 +37,6 @@ class CategoryRoute extends StatelessWidget {
     Icons.archive,
   ];
 
-//  static const _categories = Category[
-//  (
-//      name: 'cake',
-//  color: Colors.green,
-//      iconLocation: Icons.cake,
-//  ),
-//  ]
   @override
   Widget build(BuildContext context) {
     final _categories = <Widget>[];
