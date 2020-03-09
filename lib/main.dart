@@ -126,7 +126,7 @@ class UnityConverterApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-//      title: 'Unit Converter',
+      title: 'Unit Converter',
       home: CategoryRoute(),
     );
   }

@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
+final _rowHeight = 100.0;
+final _borderRadius = BorderRadius.circular(_rowHeight / 2);
+
 class Category extends StatelessWidget {
   final String name;
   final ColorSwatch color;
@@ -22,16 +25,16 @@ class Category extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: Container(
-        height: 80.0,
+        height: _rowHeight,
         child: InkWell(
-          borderRadius: new BorderRadius.circular(35.0),
+          borderRadius: _borderRadius,
           highlightColor: color[70],
           splashColor: color[100],
           onTap: () {
-            print("123");
+            print("foi1");
           },
           child: Padding(
-            padding: EdgeInsets.all(7.0),
+            padding: EdgeInsets.all(8.0),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -41,7 +44,6 @@ class Category extends StatelessWidget {
                     iconLocation,
                     color: Colors.black,
                     size: 50.0,
-                    semanticLabel: 'coraçãozinho',
                   ),
                 ),
                 Center(

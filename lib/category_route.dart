@@ -26,23 +26,44 @@ class CategoryRoute extends StatelessWidget {
     Colors.red,
   ];
 
+  static const _baseIcons = <IconData>[
+    Icons.cake,
+    Icons.accessibility,
+    Icons.favorite,
+    Icons.beach_access,
+    Icons.credit_card,
+    Icons.access_alarm,
+    Icons.laptop_mac,
+    Icons.archive,
+  ];
+
+//  static const _categories = Category[
+//  (
+//      name: 'cake',
+//  color: Colors.green,
+//      iconLocation: Icons.cake,
+//  ),
+//  ]
   @override
   Widget build(BuildContext context) {
-    final listView = Container(
-      child: Center(
-        child: Category(
-          name: 'cake',
-          color: Colors.green,
-          iconLocation: Icons.cake,
-        ),
-      ),
+    final _categories = <Widget>[];
+    for (var i = 0; i < _categoryNames.length; i++) {
+      _categories.add(new Category(
+          name: _categoryNames[i],
+          color: _baseColors[i],
+          iconLocation: _baseIcons[i]));
+    }
+
+    final listView = ListView(
+      children: _categories,
     );
 
     final appBar = AppBar(
-      title: const Text('Unity Converter App'),
+      title: const Text('Unit Converter'),
       centerTitle: true,
-      backgroundColor: Colors.black45,
-      textTheme: TextTheme(title: TextStyle(fontSize: 23, fontFamily: 'Hind')),
+//      backgroundColor: Colors.black45,
+      backgroundColor: Colors.blueGrey,
+      textTheme: TextTheme(title: TextStyle(fontSize: 30, fontFamily: 'Hind')),
     );
 
     return Scaffold(
